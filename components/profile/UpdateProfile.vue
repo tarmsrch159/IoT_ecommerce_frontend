@@ -110,11 +110,11 @@ const onSubmit = async () => {
   loading.value = true
   try {
     //ส่ง request ไปยัง backend ที่มาจาก user data
-    const response = await axios.put(`${apiBaseUrl}/api/user/update/profile`,
+    const response = await axios.post(`${apiBaseUrl}/api/user/update/profile`,
       form, headersConfig(authStore.access_token)
     )
     //เก็บ response ไปยัง auth store
-    authStore.user = response.data.user
+    authStore.user = response.data.data
     authStore.isLoading = false
     toast.success(response.data.message, {
       timeout: 2000

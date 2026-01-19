@@ -14,7 +14,9 @@ export const useAuthStore = defineStore("authIoTShopStore", {
     validationErrors: null as any,
     isLoading: false,
   }),
-
+  persist: {
+    key: 'auth',       
+  },
   actions: {
     //setIsloggedIn
     //ตั้งค่าการเข้าสู่ระบบ
@@ -67,5 +69,5 @@ export const useAuthStore = defineStore("authIoTShopStore", {
       localStorage.removeItem('access_token')
     },
   },
-  persist: true
+
 });

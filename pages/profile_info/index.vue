@@ -324,9 +324,7 @@ const uploadImage = async () => {
         const response = await axios.post(`${apiBaseUrl}/api/user/update/profile`, formData, headersConfig(authStore.access_token, 'multipart/form-data'))
 
         // Update store with new user data including image
-        console.log(response.data.user)
-        console.log(response.data.data)
-        console.log(response.data)
+       
         authStore.user = response.data.data
         toast.success("อัพเดทรูปโปรไฟล์เรียบร้อยแล้ว")
         // cancelUpload() // Reset state
