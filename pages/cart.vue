@@ -152,14 +152,14 @@
 <script setup>
 import { useCartStore } from '~/stores/cart'
 import { useAuthStore } from '~/stores/useAuthStore'
-import { useToast } from 'vue-toastification'
 import UpdateProfile from '~/components/profile/UpdateProfile.vue'
 import axios from 'axios'
 import { headersConfig } from '~/configs/apiConfig'
 import { useRouter } from 'vue-router'
 const authStore = useAuthStore()
 const showProfileForm = ref(false)
-const toast = useToast()
+const { $toast } = useNuxtApp()
+const toast = $toast   
 const router = useRouter()
 
 const { public: { apiBaseUrl } } = useRuntimeConfig()

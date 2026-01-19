@@ -58,8 +58,10 @@ import { reactive, ref, watch, nextTick, onMounted } from 'vue'
 import { useAuthStore } from '~/stores/useAuthStore'
 import axios from 'axios'
 import { headersConfig } from '~/configs/apiConfig'
-import { useToast } from 'vue-toastification'
-const toast = useToast()
+import { useNuxtApp } from '#app'
+
+const { $toast } = useNuxtApp()
+const toast = $toast   
 const props = defineProps({
   visible: { type: Boolean, default: true },
   title: { type: String, default: 'กรุณากรอกข้อมูลสำหรับจัดส่ง' },

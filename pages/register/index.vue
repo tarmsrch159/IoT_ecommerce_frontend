@@ -95,12 +95,13 @@
 
 <script setup>
 import axios from 'axios'
-import { useToast } from 'vue-toastification'
+
 import { reactive, ref } from 'vue'
 import { useAuthStore } from '~/stores/useAuthStore'
 import AppLoading from '~/components/ui/AppLoading.vue'
 const authStore = useAuthStore()
-const toast = useToast()
+const { $toast } = useNuxtApp()
+const toast = $toast
 const form = reactive({
     name: '',
     email: '',

@@ -2,7 +2,6 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import { headersConfig } from '~/configs/apiConfig'
 import { useAuthStore } from '~/stores/useAuthStore'
-import { useToast } from 'vue-toastification'
 
 /* -------------------- Types -------------------- */
 

@@ -220,7 +220,7 @@
 
                     </Transition>
                 </div>
-
+              
             </div>
         </div>
     </div>
@@ -231,17 +231,18 @@ import { ref, onMounted, computed } from 'vue'
 import { useAuthStore } from '~/stores/useAuthStore'
 import UpdateProfile from '~/components/profile/UpdateProfile.vue'
 import axios from 'axios'
-import { useToast } from 'vue-toastification'
 import { headersConfig } from '~/configs/apiConfig'
 import AppLoading from '~/components/ui/AppLoading.vue'
+const { $toast } = useNuxtApp()
 
 definePageMeta({
     middleware: ['auth']
 })
 
 const authStore = useAuthStore()
-const toast = useToast()
+const toast = $toast   
 const { public: { apiBaseUrl } } = useRuntimeConfig()
+
 
 // Tabs Configuration
 const tabs = [
@@ -324,7 +325,7 @@ const uploadImage = async () => {
         const response = await axios.post(`${apiBaseUrl}/api/user/update/profile`, formData, headersConfig(authStore.access_token, 'multipart/form-data'))
 
         // Update store with new user data including image
-       
+
         authStore.user = response.data.data
         toast.success("อัพเดทรูปโปรไฟล์เรียบร้อยแล้ว")
         // cancelUpload() // Reset state
