@@ -12,7 +12,7 @@ export const useAuthStore = defineStore("authIoTShopStore", {
     access_token: null as string | null,
 
     validationErrors: null as any,
-    isLoading: false as boolean,
+    isLoading: false,
   }),
 
   actions: {
@@ -67,14 +67,5 @@ export const useAuthStore = defineStore("authIoTShopStore", {
       localStorage.removeItem('access_token')
     },
   },
-  persist: [
-    {
-      paths: ["access_token", "isLoggedIn"],
-      storage: persistedState.cookies,
-    },
-    {
-      paths: ["user", "validationErrors"],
-      storage: persistedState.localStorage,
-    },
-  ],
+  persist: true
 });

@@ -6,9 +6,7 @@ export const useCartStore = defineStore('cart', {
     isLoading: false,
   }),
 
-  persist: {
-    storage: persistedState.localStorage,
-  },
+  persist: true,
 
   getters: {
     // คำนวณจำนวนสินค้าทั้งหมดในตะกร้า

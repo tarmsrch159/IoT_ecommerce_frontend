@@ -6,16 +6,11 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
+    'pinia-plugin-persistedstate/nuxt',
     "@nuxtjs/color-mode",
     "nuxt-toastify",
-    "@pinia-plugin-persistedstate/nuxt",
   ],
-  piniaPersistedstate: {
-    cookieOptions: {
-      sameSite: "lax",
-    },
-    storage: "cookies",
-  },
+ 
   toastify: {
     autoClose: 3000,
     position: "top-right",

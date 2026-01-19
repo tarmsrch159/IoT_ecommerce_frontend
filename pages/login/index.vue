@@ -1,5 +1,5 @@
 <template>
-    <AppLoading v-if="authStore.isLoading" fullscreen text="กำลังเข้าสู่ระบบ..." />
+    <!-- <AppLoading v-if="authStore.isLoading" fullscreen text="กำลังเข้าสู่ระบบ..." /> -->
     <div class="h-full flex items-center justify-center px-4 py-10">
         <!-- Card -->
         <div class="w-full max-w-xs sm:max-w-md
