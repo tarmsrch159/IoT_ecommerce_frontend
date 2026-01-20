@@ -67,7 +67,7 @@
         <!-- Right Menu -->
         <div class="flex items-center space-x-4">
           <!-- Cart Button -->
-          <NuxtLink to="/cart" @click="() => console.log('go cart')"
+          <NuxtLink to="/cart"
             class="relative p-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-dark-800 rounded-xl transition-all">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -96,7 +96,7 @@
           </button>
 
           <!-- Auth -->
-          <div class="relative flex items-center" v-if="authStore.isLoggedIn">
+          <div class="relative flex items-center" v-if="authStore.isLoggedIn && authStore.user">
             <!-- Profile Button -->
             <button @click="open = !open" class="flex items-center gap-2 p-1 pr-3 rounded-xl
            hover:bg-gray-100 dark:hover:bg-dark-800
@@ -129,6 +129,8 @@
               </button>
             </div>
           </div>
+
+         
 
           <!-- Guest -->
           <div v-else class="hidden sm:flex items-center space-x-2">

@@ -45,7 +45,11 @@
 
       <!-- Actions -->
       <div class="space-y-2">
-        <NuxtLink :to="`/profile_info`" class="block w-full py-2.5 rounded-xl text-sm font-medium
+        <NuxtLink :to="{
+          path: '/profile_info',
+          query: { tab: 'orders' }
+        }" 
+        class="block w-full py-2.5 rounded-xl text-sm font-medium
                  bg-primary-600 hover:bg-primary-700
                  text-white transition">
           ดูคำสั่งซื้อ

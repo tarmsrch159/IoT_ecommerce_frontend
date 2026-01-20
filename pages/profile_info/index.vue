@@ -220,7 +220,7 @@
 
                     </Transition>
                 </div>
-              
+
             </div>
         </div>
     </div>
@@ -240,9 +240,10 @@ definePageMeta({
 })
 
 const authStore = useAuthStore()
-const toast = $toast   
+const toast = $toast
 const { public: { apiBaseUrl } } = useRuntimeConfig()
 
+const route = useRoute()
 
 // Tabs Configuration
 const tabs = [
@@ -267,6 +268,9 @@ const loadingOrders = ref(false)
 // Fetch latest user data on mount
 onMounted(async () => {
     loadingOrders.value = true
+    if (route.query.tab === 'orders') {
+        activeTab.value = 'orders'
+    }
     try {
         const config = headersConfig(authStore.access_token)
         const response = await axios.get(`${apiBaseUrl}/api/user/profile`, config)
@@ -277,6 +281,8 @@ onMounted(async () => {
     } finally {
         loadingOrders.value = false
     }
+
+
 })
 
 /* --- Image Upload Logic --- */
