@@ -115,10 +115,10 @@ const onSubmit = async () => {
     const response = await axios.post(`${apiBaseUrl}/api/user/update/profile`,
       form, headersConfig(authStore.access_token)
     )
-    //เก็บ response ไปยัง auth store
+
     authStore.user = response.data.data
     authStore.isLoading = false
-    toast.success(response.data.message, {
+    toast.success("อัพเดตข้อมูลสําเร็จ !", {
       timeout: 2000
     })
     emit('success')

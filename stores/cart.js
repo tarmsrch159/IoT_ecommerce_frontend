@@ -35,7 +35,6 @@ export const useCartStore = defineStore('cart', {
     // เพิ่มสินค้าลงตะกร้า
     addToCart(product) {
       const existingItem = this.items.find(item => item.id === product.id)
-      console.log('Adding to cart:', product)
       if (existingItem) {
         existingItem.quantity++
       } else {

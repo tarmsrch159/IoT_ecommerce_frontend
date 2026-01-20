@@ -126,7 +126,6 @@ const handleImage = (e) => {
 const handleRegister = async () => {
     try {
         authStore.isLoading = true
-        console.log(` apiBaseUrl: ${apiBaseUrl}`)
         const formData = new FormData()
         Object.entries(form).forEach(([k, v]) => v && formData.append(k, v))
 

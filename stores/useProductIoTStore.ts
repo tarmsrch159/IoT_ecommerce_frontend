@@ -33,7 +33,6 @@ export const useProductIoTStore = defineStore("productsIOT", {
       const {
         public: { apiBaseUrl },
       } = useRuntimeConfig();
-      console.log(apiBaseUrl);
       this.isLoading = true;
       try {
         const response = await axios.get(`${apiBaseUrl}/api/products`);

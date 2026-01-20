@@ -204,7 +204,6 @@ const handleCheckout = async () => {
 
   try {
     cartStore.isLoading = true
-    console.log('Proceeding to checkout with items:', cartStore.items)
     const response = await axios.post(`${apiBaseUrl}/api/store/order`,
       {
         cartItems: cartStore.items,
@@ -214,9 +213,6 @@ const handleCheckout = async () => {
     cartStore.clearCart()
 
     authStore.user = response.data.user
-    console.log(response.data)
-    console.log(response.data.order.id)
-    console.log(response.data.order.total)
     router.push({
       path: '/order/success',
       query: {
