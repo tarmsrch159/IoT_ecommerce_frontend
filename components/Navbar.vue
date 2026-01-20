@@ -96,7 +96,7 @@
           </button>
 
           <!-- Auth -->
-          <div class="relative" v-if="authStore.isLoggedIn">
+          <div class="relative flex items-center" v-if="authStore.isLoggedIn">
             <!-- Profile Button -->
             <button @click="open = !open" class="flex items-center gap-2 p-1 pr-3 rounded-xl
            hover:bg-gray-100 dark:hover:bg-dark-800
@@ -113,10 +113,10 @@
             </button>
 
             <!-- Dropdown -->
-            <div v-show="open" @click.outside="open = false" class="absolute right-0 mt-2 w-48
-           bg-white dark:bg-dark-900
-           border border-gray-200 dark:border-dark-800
-           rounded-xl shadow-xl overflow-hidden z-50">
+            <div v-show="open" @click.outside="open = false" class="absolute right-0 top-full mt-2 w-48
+         bg-white dark:bg-dark-900
+         border border-gray-200 dark:border-dark-800
+         rounded-xl shadow-xl z-[9999]">
               <NuxtLink to="/profile_info" class="flex items-center gap-2 px-4 py-3 text-sm
              hover:bg-gray-100 dark:hover:bg-dark-800">
                 👤 Profile
